@@ -211,7 +211,6 @@ class MainActivity : AppCompatActivity() {
 
             imageCapture = ImageCapture.Builder().build()
 
-
             val imageAnalyzer = ImageAnalysis.Builder()
                 .build()
                 .also {
@@ -219,8 +218,6 @@ class MainActivity : AppCompatActivity() {
                         Log.d(TAG, "Average luminosity: $luma")
                     })
                 }
-
-
 
             // Select back camera as a default
             val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
@@ -231,7 +228,7 @@ class MainActivity : AppCompatActivity() {
 
                 // Bind use cases to camera
                 cameraProvider.bindToLifecycle(
-                    this, cameraSelector, preview, imageCapture, videoCapture)
+                    this, cameraSelector, preview, imageCapture, videoCapture,imageAnalyzer)
 
             } catch(exc: Exception) {
                 Log.e(TAG, "Use case binding failed", exc)
@@ -279,9 +276,9 @@ class MainActivity : AppCompatActivity() {
                 finish()
             }
         }
-        if (requestCode == REQUEST_CODE_PERMISSIONS) {
+       //if (requestCode == REQUEST_CODE_PERMISSIONS) {
 
-        }
+        //}
         if (allPermissionsGranted()) {
             startCamera()
         }else {

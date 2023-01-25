@@ -1,6 +1,6 @@
 # VisionArtificial Kotlin Version
 
-### Our app
+### Our app: https://bit.ly/3HrXCOq
 We can access to native Android resources and functionally do the following tasks
 - Open camera
 - Take pictures
